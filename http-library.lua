@@ -2,13 +2,15 @@ local http_service = cloneref(game:GetService("HttpService"))
 
 local http = {}
 
-http.send_request = function(url : string, method : string, headers : table, body : table)
+http.send_request = function(url : string, method : string, hell)
     local response = http_request(
         {
             Url = url,
-            Method = method,
-            Headers = headers,
-            Body = http_service:JSONEncode(body)
+            Method = tostring(method),
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = services.http_service:JSONEncode(hell)
         }
     )
 
