@@ -2,7 +2,7 @@ local http_service = cloneref(game:GetService("HttpService"))
 
 local http = {}
 
-local http.send_request = function(url : string, method : string, headers : table, body : table)
+http.send_request = function(url : string, method : string, headers : table, body : table)
     local response = http_request(
         {
             Url = url,
@@ -11,6 +11,10 @@ local http.send_request = function(url : string, method : string, headers : tabl
             Body = http_service:JSONEncode(body)
         }
     )
+
+    if response
+        return response
+    end
 end
 
 return http 
