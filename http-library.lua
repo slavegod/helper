@@ -10,7 +10,7 @@ http.send_request = function(url : string, method : string, hell)
             Headers = {
                 ["Content-Type"] = "application/json"
             },
-            Body = services.http_service:JSONEncode(hell)
+            Body = http_service:JSONEncode(hell)
         }
     )
 
