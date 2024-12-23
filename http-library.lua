@@ -12,7 +12,7 @@ http.send_request = function(url : string, method : string, headers : table, bod
         }
     )
 
-    if response
+    if response then
         return response
     end
 end
